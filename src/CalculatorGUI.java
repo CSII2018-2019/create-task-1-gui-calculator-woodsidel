@@ -38,7 +38,7 @@ public class CalculatorGUI extends JFrame {
 
 	private void initGUI() {
 		
-			
+		
 		JLabel titleLabel = new JLabel("Calculator");
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
         Font titleFont = new Font(Font.SERIF, Font.PLAIN, 32);
@@ -64,6 +64,8 @@ public class CalculatorGUI extends JFrame {
         
         in2 = new JTextField(10);
         numberInPanel.add(in2);
+        
+    
         
         //set-up button panel
         JPanel buttonPanel = new JPanel();
@@ -118,7 +120,7 @@ public class CalculatorGUI extends JFrame {
         buttonPanel.add(perChangeBtn);
         
         
-		
+        
         answer = new JLabel("Answer: ");
         answer.setPreferredSize(new Dimension (500, 100));
         Font answerFont = new Font(Font.SERIF, Font.PLAIN, 20);
@@ -139,9 +141,17 @@ public class CalculatorGUI extends JFrame {
 	}
 
 	private void calcFactorial() {
-		// TODO Auto-generated method stub
-		
+		String integer = in1.getText();
+		int factInt = Integer.parseInt(integer);
+		while(factInt != 1) {
+			factInt = factInt*(factInt-1);
+			factInt--;
+		}
+		answer.setText("The factorial is: " + factInt);
+			
 	}
+		
+	
 
 	private void calcAvg() {
 		double x = Double.parseDouble(in1.getText());
